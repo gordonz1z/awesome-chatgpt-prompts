@@ -195,6 +195,28 @@ document.addEventListener("DOMContentLoaded", () => {
   // Initialize search functionality
   initializeSearch();
 
+  // Language selection for translation
+  const translationSelect = document.getElementById('translationSelect');
+  if (translationSelect) {
+    translationSelect.addEventListener('change', function() {
+      const selectedLang = this.value;
+      // Update the URL parameter and reload the page
+      const url = new URL(window.location.href);
+      url.searchParams.set('lang', selectedLang);
+      window.location.href = url.toString();
+    });
+
+    // Set the initial value of the translation select based on the URL parameter
+    const urlParams = new URLSearchParams(window.location.search);
+    const langParam = urlParams.get('lang');
+    if (langParam) {
+      translationSelect.value = langParam;
+    } else {
+      // Default to 'zh-tw' if no language parameter is present
+      translationSelect.value = 'zh-tw';
+    }
+  }
+
   // Initialize language and tone selectors
   initializeLanguageAndTone();
 });
