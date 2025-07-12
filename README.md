@@ -2,6 +2,27 @@
 <img width="395" alt="prompts.chat" src="https://github.com/user-attachments/assets/e0d0e32d-d2ce-4459-9f37-e951d9f4f5de" />
 </p>
 
+## 本地运行指南
+本项目使用 Jekyll 构建，在 Mac 系统上可按以下步骤本地启动服务器：
+1. 安装命令行开发工具：`xcode-select --install`
+2. 使用 Homebrew 安装 Ruby：`brew install ruby`
+3. 添加 Ruby 路径到环境变量：
+   ```bash
+   echo 'export PATH="/opt/homebrew/opt/ruby/bin:$PATH"' >> ~/.zshrc
+   source ~/.zshrc
+   ```
+4. 若安装速度慢，可替换 Ruby 镜像源：
+   ```bash
+   sudo gem sources --remove https://rubygems.org/
+   sudo gem sources -a http://gems.ruby-china.com/
+   gem sources -l
+   ```
+5. 安装 Jekyll 和 Bundler：`sudo gem install --user-install bundler jekyll`
+6. 进入项目目录：`cd /Users/gordon/Documents/GitHub/2023hk/awesome-chatgpt-prompts`
+7. 安装项目依赖：`bundle install`
+8. 启动服务：`jekyll serve`
+9. 打开浏览器，访问 `http://localhost:4000` 查看项目
+
 <h3 align="center">Sponsors</h3>
 
 <div align="center">
